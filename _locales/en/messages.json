@@ -1,0 +1,7 @@
+{
+"popupTitle": { "message": "CBE en" },
+"option1": { "message": "Option 1" },
+"saveButton": { "message": "Save" }, 
+"loadOpt": { "message": "Loaded..." }, 
+"savedOpt": { "message": "Options saved" } 
+}
