@@ -20,12 +20,14 @@ The skeleton uses following JavaScript APIs:
 + browserAction
 + i18n
 
-To support different namespaces there is short mapper in browser.js 
-
+To support different namespaces there is short mapper in browser.js
+```javascript
 window.browser = (function () {
   return window.msBrowser ||
     window.browser ||
     window.chrome;
 })();
+```
+
 
 
