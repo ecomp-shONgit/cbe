@@ -22,8 +22,7 @@ function localizeNode(node)
     @var object storage-data 
     @need browser.i18n
     @need browser.tabs
-    @need browser.runtime            
-    
+    @need browser.runtime
  */
 function pleaseDoItNow(data)
   {

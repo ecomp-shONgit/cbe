@@ -1,5 +1,17 @@
 'use strict';
 
+/*  popup.js  
+                         
+    @need js/browser.js
+    @need js/extension.functions.js 
+           
+    @need browser.runtime
+    @need browser.storage
+    @need browser.i18n
+    @need browser.browserAction
+    @need browser.tabs        
+*/ 
+
 document.addEventListener("DOMContentLoaded", function(event) { 
 
 var isActiveSwitch = document.querySelector('#isActiveSwitch');
