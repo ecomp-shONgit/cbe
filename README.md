@@ -12,4 +12,11 @@ Tested in
 + Firefox Quantum
 + Chromium 58.0
 
+The skeleton uses following JavaScript APIs:
++ runtime
++ tabs
++ storage
++ browserAction
++ i18n
+
 
