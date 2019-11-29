@@ -15,6 +15,7 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 
 var isActiveSwitch = document.querySelector('#isActiveSwitch');
+var optButton_el = document.querySelector('#optionsButton');
   
   /* localization of html-elements */
   document.querySelectorAll('.localize').forEach(function(node) {
@@ -46,4 +47,10 @@ var isActiveSwitch = document.querySelector('#isActiveSwitch');
         }); 
       }); 
     });
+    
+  /* optionButton */
+  optButton_el.addEventListener("click", function(el) {  
+    browser.runtime.openOptionsPage();  
+  }); 
+  
 }); 

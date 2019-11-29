@@ -25,8 +25,13 @@ browser.tabs.onActivated.addListener(function(info) {
      browser.storage.local.get(null, function(data)
       {  
       
-//console.dir(data);
-pleaseDoItNow(data);
+      if( data.isActive )
+        {
+        
+        pleaseDoItNow(data);
+                
+        }//end if
+
 
       }); 
 
