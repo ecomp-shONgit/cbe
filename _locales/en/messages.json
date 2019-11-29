@@ -3,5 +3,6 @@
 "option1": { "message": "Option 1" },
 "saveButton": { "message": "Save" }, 
 "loadOpt": { "message": "Loaded..." }, 
-"savedOpt": { "message": "Options saved" } 
+"savedOpt": { "message": "Options saved" }, 
+"optionsButton": { "message": "Options" }
 }
