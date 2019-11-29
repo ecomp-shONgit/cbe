@@ -2,6 +2,7 @@
 Cross Browser Extension
 
 A skeleton for a browser extension based on WebExtensions
+
 Tested in
 + Opera 65.0
 + Vivaldi 2.9
