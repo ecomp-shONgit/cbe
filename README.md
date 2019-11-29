@@ -22,7 +22,7 @@ The skeleton uses following JavaScript APIs:
 * browserAction
 * i18n
 
-To support different browser namespaces there is short mapper in browser.js
+To support different browser namespaces there is an alias function in browser.js
 ```javascript
 window.browser = (function () {
   return window.msBrowser ||
