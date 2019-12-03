@@ -1,6 +1,7 @@
 
-# cbe
-## Cross Browser Extension
+
+
+## Cross Browser Extension (cbe)
 
 A skeleton for a browser extension based on WebExtensions. Tested in
 
