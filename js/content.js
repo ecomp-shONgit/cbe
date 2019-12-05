@@ -1,7 +1,7 @@
 /*  content.js  
   
   the script has the same rights as in a single website
-  we can manipule the dom here as usuly                         
+  we can manipulate the dom here as usuly                         
      
 */ 
 
