@@ -67,6 +67,11 @@ function pleaseDoItNow(data)
              
       
       /* content-script can loaded here */
+        browser.tabs.executeScript(tabID, { file: 'js/content.js' }, function() 
+          {
+          if (browser.runtime.lastError)
+            console.log('There was an error injecting script : \n' + browser.runtime.lastError.message);
+          });         
        
       
       } 
@@ -121,3 +126,72 @@ function setTheOptions()
     setTimeout(function() { status.textContent = ''; }, 1450);
     });   
   } 
+  
+
+ /* pleaseUnDoItNow
+    execute an 'unLoadScript'
+    @var object storage-data 
+    @need browser.i18n
+    @need browser.tabs
+    @need browser.runtime
+ */
+function pleaseUnDoItNow(data)
+  {
+  var tabID = data.tabID;
+
+  if( typeof(tabID) == 'undefined' || tabID == null || tabID==0 ) 
+    {
+    return;
+    } 
+
+  browser.tabs.get(tabID, function(tab) 
+    {
+    if(browser.runtime.lastError)  
+      console.log('There was an error in pleaseDoItNow : \n' + browser.runtime.lastError.message);
+
+     
+    /* the tab and the popup are separeted - so we have to load some js and css in tab-context */     
+    if(!browser.runtime.lastError && tab && tab.url && tab.url.substring(0,6)!="chrome" && tab.url.substring(0,5)!="about" ) 
+      {
+        // console.log("we are in tabID "+tabID+" with url "+tab.url);       
+
+        /* browser.js */
+        browser.tabs.executeScript(tabID, { file: 'js/browser.js' }, function() 
+          {
+          if (browser.runtime.lastError) 
+            console.log('There was an error injecting script : \n' + browser.runtime.lastError.message);
+          }); 
+
+        /* extension_functions.js */  
+        browser.tabs.executeScript(tabID, { file: 'js/extension.functions.js' }, function() 
+          {
+          if (browser.runtime.lastError)
+            console.log('There was an error injecting script : \n' + browser.runtime.lastError.message);
+          });           
+
+        /* css file  */
+        browser.tabs.insertCSS(tabID, { file: 'css/main.css' }, function() 
+          {
+          if (browser.runtime.lastError)
+            console.log('There was an error inserting css : \n' + browser.runtime.lastError.message);
+          }); 
+             
+      
+      /* content-script  */
+        browser.tabs.executeScript(tabID, { file: 'js/content.unload.js' }, function() 
+          {
+          if (browser.runtime.lastError)
+            console.log('There was an error injecting script : \n' + browser.runtime.lastError.message);
+          });         
+       
+      
+      } 
+    else
+      {
+      // console.log("will do nothing");
+      
+      }
+
+    });     
+  }  
+         

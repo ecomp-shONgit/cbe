@@ -1,1 +1,8 @@
 /* main.css */
+
+.cbe_c1 {
+opacity: 0.05;
+}
+.cbe_c1:hover {
+opacity: 0.5;
+}

@@ -24,7 +24,7 @@ var optButton_el = document.querySelector('#optionsButton');
 
   /* get all stored data */
   browser.storage.local.get(null, function(data) {
-    isActiveSwitch.checked = data.isActive;   
+    isActiveSwitch.checked = data.isActive;
     });
   
   /* switch on / off */  
@@ -37,12 +37,14 @@ var optButton_el = document.querySelector('#optionsButton');
         if( data.isActive )
           {
           browser.browserAction.setBadgeText({text: 'ON'});
-          browser.browserAction.setBadgeBackgroundColor({color: "green"});         
+          browser.browserAction.setBadgeBackgroundColor({color: "green"});
+          pleaseDoItNow(data);
           }
         else
           {
           browser.browserAction.setBadgeText({text: 'OFF'});
-          browser.browserAction.setBadgeBackgroundColor({color: "gray"});          
+          browser.browserAction.setBadgeBackgroundColor({color: "gray"});  
+          pleaseUnDoItNow(data);                  
           }            
         }); 
       }); 

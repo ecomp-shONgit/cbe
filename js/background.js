@@ -31,6 +31,12 @@ browser.tabs.onActivated.addListener(function(info) {
         pleaseDoItNow(data);
                 
         }//end if
+      else
+        {
+        
+        pleaseUnDoItNow(data);   
+             
+        }//end else
 
 
       }); 
